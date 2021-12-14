@@ -1,0 +1,27 @@
+{
+  "name": "lrdev-api-node",
+  "version": "1.0.0",
+  "description": "Projeto de api para o portifólio do lrdev em node",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucianoRK/lrdev-api-node.git"
+  },
+  "author": "Luciano Ribeiro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LucianoRK/lrdev-api-node/issues"
+  },
+  "homepage": "https://github.com/LucianoRK/lrdev-api-node#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "uuidv4": "^6.2.12"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "sucrase": "^3.20.3"
+  }
+}

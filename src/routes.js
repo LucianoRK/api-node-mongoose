@@ -1,11 +1,19 @@
-const {Router} = require('express');
-const {uuid} = require('uuidv4')
+import { Router } from 'express';
+import { v4 as uuidV4 } from "uuid";
 
 const routes = new Router();
 
 //id, name, email, password
 const users = [];
 
+
+function middlewareTest(req, res, next){
+    console.log('middlewareTest executou');
+
+    next();
+}
+
+routes.use(middlewareTest);
 
 // Listar todos
 routes.get('/users', (req, res) => {
@@ -30,7 +38,7 @@ routes.post('/users', (req, res) => {
     const {id, name, email, password} = req.body;
 
     const user = {
-        id:uuid(),
+        id:uuidV4(),
         name, 
         email, 
         password
@@ -80,4 +88,4 @@ routes.delete('/users/:id', (req, res) => {
     return res.status(204).send();
 })
 
-module.exports = routes;
+export default routes;

@@ -3,7 +3,7 @@ import User from "../models/User";
 class UserController {
 
     async index(req, res){
-        const users = await User.find({});
+        const users = await User.find();
 
         return res.json(users);
     }
@@ -16,7 +16,7 @@ class UserController {
             return res.status(404).json({message: 'Não encontrado'});
         }
 
-        return res.json(user);
+        return res.json({user:user.show()});
     }
 
     async store(req, res){
@@ -27,7 +27,7 @@ class UserController {
             password
         })
 
-        return res.status(201).json(user);
+        return res.status(201).json({user:user.show()});
     }
 
     async update(req, res){

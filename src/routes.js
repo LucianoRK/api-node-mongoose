@@ -1,7 +1,11 @@
 import { Router } from 'express';
+import AuthController from './controllers/AuthController';
 import UserController from './controllers/UserController';
 
 const routes = new Router();
+
+//Auth
+routes.post('/login', AuthController.login);
 
 //Usuário
 routes.get('/users', UserController.index);

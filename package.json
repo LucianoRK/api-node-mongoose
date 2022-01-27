@@ -17,7 +17,10 @@
   },
   "homepage": "https://github.com/LucianoRK/lrdev-api-node#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.2.8",
     "uuidv4": "^6.2.12"
   },
   "devDependencies": {

@@ -1,11 +1,15 @@
 import { Router } from 'express';
 import AuthController from './controllers/AuthController';
 import UserController from './controllers/UserController';
+import checkJwt from './middlewares/checkJwt';
 
 const routes = new Router();
 
 //Auth
 routes.post('/login', AuthController.login);
+
+//Valida o Jwt
+routes.use(checkJwt);
 
 //Usuário
 routes.get('/users', UserController.index);
